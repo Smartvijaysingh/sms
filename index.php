@@ -40,7 +40,8 @@
 				}
 				
 			?>
-		
+
+<!--                vijnay here-->
 				<form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
 					<label>User Name</label><br>
 					<input type="text" name="aname" required class="input"><br><br>
