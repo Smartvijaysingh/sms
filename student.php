@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Tutor Joe's</title>
+		<title>Student's Details</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
@@ -91,7 +91,7 @@
 											<th>Address</th>
 											<th>Class</th>
 											<th>Sec</th>
-											<th>Image</th>
+											<th>Delete</th>
 										</tr>
 									
 									
@@ -113,8 +113,7 @@
 											<td>{$r["ADDR"]}</td>
 											<td>{$r["SCLASS"]}</td>
 											<td>{$r["SSEC"]}</td>
-											<td><img src='{$r["SIMG"]}' height='70' width='70'></td>
-										
+											<td><a href='stud_delete.php?id={$r["ID"]}' class='btnr'>Delete</a><td>
 										
 										</tr>
 										";
