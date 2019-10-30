@@ -88,7 +88,7 @@
 					?>
 					<table border="1px" >
 						<tr>
-							<th>S.No</th>
+
 							<th>Class Name</th>
 							<th>Section</th>
 							<th>Delete</th>
@@ -104,10 +104,9 @@
 									$i++;
 									echo "
 										<tr>
-											<td>{$i}</td>
 											<td>{$r["CNAME"]}</td>
 											<td>{$r["CSEC"]}</td>
-											<td><a href='delete.php?id={$r["CID"]}' class='btnr'>Delete</a></td>
+											<td><a href='delete.php?cname={$r["CNAME"]}&csec={$r["CSEC"]}' class='btnr'>Delete</a></td>
 										</tr>
 										";
 									
