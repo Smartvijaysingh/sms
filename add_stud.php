@@ -1,9 +1,9 @@
 <?php
 	include"database.php";
 	session_start();
-	if(!isset($_SESSION["TID"]))
+	if(!isset($_SESSION["AID"]))
 	{
-		echo"<script>window.open('teacher_login.php?mes=Access Denied...','_self');</script>";
+		echo"<script>window.open('admin_login.php?mes=Access Denied...','_self');</script>";
 		
 	}	
 ?>
@@ -19,7 +19,7 @@
 		
 			<div id="section">
 				<?php include"sidebar.php";?><br><br><br>
-				<h3 class="text">Welcome <?php echo $_SESSION["TNAME"]; ?></h3><br><hr><br>
+				<h3 class="text">Welcome <?php echo $_SESSION["ANAME"]; ?></h3><br><hr><br>
 				<div class="content">
 					
 						<h3 >Set Exam Time Table Details</h3><br>
@@ -28,10 +28,20 @@
 						{
 							$edate=$_POST["da"].'-'.$_POST["mo"].'-'.$_POST["ye"];
 							$target="student/";
-							$target_file=$target.basename($_FILES["img"]["name"]);
-							if(move_uploaded_file($_FILES['img']['tmp_name'],$target_file))
-							{
-								$sq="insert into student(RNO,NAME,FNAME,DOB,GEN,PHO,MAIL,ADDR,SCLASS,SSEC,SIMG,TID) values('{$_POST["rno"]}','{$_POST["name"]}','{$_POST["fname"]}','{$edate}','{$_POST["gen"]}','{$_POST["pho"]}','{$_POST["email"]}','{$_POST["addr"]}','{$_POST["cla"]}','{$_POST["sec"]}','{$target_file}','{$_SESSION["TID"]}')";
+							$flag = 1;
+							$TID = '{$_SESSION["AID"]}';
+
+								$sq="insert into student(RNO,NAME,FNAME,DOB,GEN,MAIL,PHO,ADDR,SCLASS,SSEC,TID) values('{$_POST["rno"]}',
+                                                                                                                    '{$_POST["name"]}',
+                                                                                                                    '{$_POST["fname"]}',
+                                                                                                                    '{$edate}',
+                                                                                                                    '{$_POST["gen"]}',
+                                                                                                                    '{$_POST["email"]}',
+                                                                                                                    '{$_POST["pho"]}',
+                                                                                                                    '{$_POST["addr"]}',
+                                                                                                                    '{$_POST["cla"]}',
+                                                                                                                    '{$_POST["sec"]}',
+                                                                                                                    '{$_SESSION["AID"]}')";
 								
 								if($db->query($sq))
 								{
@@ -41,7 +51,7 @@
 								{
 									echo "<div class='error'>Insert Failed</div>";
 								}
-							}
+
 							
 						}
 					
@@ -129,6 +139,7 @@
 					</select>
 					<select name="ye" class="input5">
 						<option value="">Select Year</option>
+                        <option value="2017">2019</option>
 						<option value="2018">2018</option>
 						<option value="2017">2017</option>
 						<option value="2016">2016</option>
@@ -147,6 +158,9 @@
 						<option value="2003">2003</option>
 						<option value="2002">2002</option>
 						<option value="2001">2001</option>
+                        <option value="2017">1999</option>
+                        <option value="2017">1998</option>
+                        <option value="2017">1997</option>
 					</select><br><br>
 					<label>Gender</label>
 					<select name="gen" required class="input3">
@@ -201,8 +215,8 @@
 						?>
 					
 					</select><br></br>
-					<label> Image</label><br>
-					<input type="file"  class="input3" required name="img"><br><br>
+<!--					<label> Image</label><br>-->
+<!--					<input type="file"  class="input3" required name="img"><br><br>-->
 			
 			<button type="submit" style="float:right;" class="btn" name="submit">Add Student Details</button>
 				</div>

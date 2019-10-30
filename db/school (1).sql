@@ -41,6 +41,8 @@ CREATE TABLE IF NOT EXISTS `admin` (
 
 INSERT INTO `admin` (`AID`, `ANAME`, `APASS`) VALUES
 (1, 'admin', '1234');
+INSERT INTO `admin` (`AID`, `ANAME`, `APASS`) VALUES
+(2, 'vijay', '12345');
 
 -- --------------------------------------------------------
 

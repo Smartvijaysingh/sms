@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Tutor Joe's</title>
+		<title>Student Details</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
@@ -43,11 +43,9 @@
 							<th>Address</th>
 							<th>Class</th>
 							<th>Sec</th>
-							<th>Image</th>
-							<th>Delete</th>
 						</tr>
 						<?php
-							$s="select * from student where TID={$_SESSION["TID"]}";
+							$s="select * from student ";
 							$res=$db->query($s);
 							if($res->num_rows>0)
 							{
@@ -68,8 +66,6 @@
 											<td>{$r["ADDR"]}</td>
 											<td>{$r["SCLASS"]}</td>
 											<td>{$r["SSEC"]}</td>
-											<td><img src='{$r["SIMG"]}' height='70' width='70'></td>
-											<td><a href='stud_delete.php?id={$r["ID"]}' class='btnr'>Delete</a><td>
 										</tr>
 									
 									
@@ -91,6 +87,6 @@
 				
 			</div>
 	
-				<?php include"footer.php";?>
+
 	</body>
 </html>

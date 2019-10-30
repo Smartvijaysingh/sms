@@ -52,9 +52,9 @@
 		
 		
 		
-		<div class="footer">
-			<footer><p>Copyright &copy; Tutor Joe's </p></footer>
-		</div>
+<!--		<div class="footer">-->
+<!--			<footer><p>Copyright &copy; Tutor Joe's </p></footer>-->
+<!--		</div>-->
 		
 			<script src="js/jquery.js"></script>
 		         <script>

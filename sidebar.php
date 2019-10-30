@@ -8,7 +8,7 @@
 			<li class="li"><a href="admin_home.php">School Information</a></li>
 			<li class="li"><a href="add_class.php"> Class</a></li>
 			<li class="li"><a href="add_sub.php"> Subject</a></li>
-
+            <li class="li"><a href="add_stud.php"> Add Students</a></li>
 			<li class="li"><a href="add_staff.php"> Staff</a></li>
 			<li class="li"><a href="view_staff.php">View Staff</a></li>
 			<li class="li"><a href="set_exam.php">Set Exam</a></li>
@@ -24,7 +24,7 @@
 		echo'
 			<li class="li"><a href="teacher_home.php">Profile</a></li>
 			<li class="li"><a href="handle_class.php"> Handled Class</a></li>
-			<li class="li"><a href="add_stud.php"> Students</a></li>
+
 			<li class="li"><a href="view_stud_teach.php" target="_blank"> View Student</a></li>
 
 			<li class="li"><a href="tech_view_exam.php">View Exam</a></li>
@@ -35,6 +35,8 @@
 		
 		';
 	}
+
+//			<li class="li"><a href="add_stud.php"> Students</a></li>
 
 
 ?>

@@ -27,7 +27,8 @@
 					
 					<li><a href="index.php">Admin</a></li>
 				<li><a href="teacher_login.php">Teacher</a></li>
-				<li><a href="contact.php">Contact Us</a></li>';
+				
+				';
 				}
 			?>
 				
